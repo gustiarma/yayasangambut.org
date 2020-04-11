@@ -1,0 +1,18 @@
+@media only screen and (max-width: 768px) {
+    .headerimage {
+        height: 15px;
+        text-align: center;
+    }
+    .headerimage > a > img {
+        height: 50px;
+        padding-bottom: 15px;
+        margin-top: -10px;
+    }
+    .d-md-flex {
+        display: flex !important;
+    }
+    .card-img-top {
+        height: 40vh;
+    }
+
+}
