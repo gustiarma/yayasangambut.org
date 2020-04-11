@@ -13,6 +13,11 @@ class Settings
     {
     }
 
+    public static function excerpt($string){
+
+        return Str::limit(strip_tags($string),150);
+    }
+
     public static function opt($optionname, $default = null, $type = 'text', $location = null, $title = null, $description = null)
     {
 

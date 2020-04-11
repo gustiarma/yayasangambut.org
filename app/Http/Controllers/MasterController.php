@@ -9,7 +9,7 @@ class MasterController extends Controller
 {
     public function index()
     {
-        $slider = WinkPost::select('body', 'featured_image')
+        $slider = WinkPost::select('body', 'slug', 'title', 'featured_image')
             ->live()
             ->orderBy('publish_date', 'DESC')
             ->limit(8)
@@ -36,7 +36,8 @@ class MasterController extends Controller
         return view('blog.content', ['postData' => $postData]);
     }
 
-    public function blogPage(){
+    public function blogPage()
+    {
         return view('blog.index');
     }
 }

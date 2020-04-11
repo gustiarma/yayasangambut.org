@@ -73,7 +73,7 @@ h3 {
 }
 
 .glide__slides {
-    height: 350px;
+    height: 525px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -83,7 +83,7 @@ h3 {
     height: 100%;
 }
 .glide__slide > article {
-    padding: 15px 15px;
+    padding: 10vw 15px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -97,6 +97,27 @@ h3 {
     font-size: 3.33333em;
     line-height: 1.1em;
     margin-bottom: 0.2em;
+}
+.slidercontent {
+    border-radius: 10px;
+    margin: 6vw 7vw;
+    max-width: 40em;
+    padding: 15px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+
+    //   opacity: 0.6;
+    /* mix-blend-mode: overlay; */
+    transition: opacity 0.5s;
+}
+.sliderImageTitle {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 1em;
 }
 
 .sliderImageTitle > a {
@@ -315,7 +336,6 @@ h3 {
     height: 50vh;
     object-fit: cover;
 }
-
 
 @import "footer";
 @import "card";
