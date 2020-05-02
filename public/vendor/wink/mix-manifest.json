@@ -1,6 +1,5 @@
 {
-    "/app.js": "/app.js?id=d91b12ed629dc70161d3",
-    "/light.css": "/light.css?id=d5ef64f95a6e2bcbcd9a",
-    "/dark.css": "/dark.css?id=f1c9621db7336720690b",
-    "/favicon.png": "/favicon.png?id=51f136ac7a92b2753c4e"
+    "/app.js": "/app.js",
+    "/light.css": "/light.css",
+    "/dark.css": "/dark.css"
 }
