@@ -9,5 +9,8 @@
 @endsection
 
 @section('footerJs')
+<script>
+  window.loadSlide();
+</script>
 
 @endsection

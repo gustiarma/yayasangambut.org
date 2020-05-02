@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Wink\WinkPage;
 use Wink\WinkPost;
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // });
 
+Route::group(['prefix' => 'data'], function () {
+    Route::get('pages', function(){
+        $pages = WinkPage::select(['title','slug'])->get();
+        return $pages;
+    } );
 
+});
 
 Route::group(['prefix' => 'sample'], function () {
     Route::get('posts', function () {

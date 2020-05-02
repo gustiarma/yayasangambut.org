@@ -4,7 +4,7 @@ use App\SiteOptions;
 use Wink\WinkSiteOptions;
 use Wink\WinkPost;
 use Illuminate\Support\Str;
-
+use Wink\WinkPage;
 
 class Settings
 {
@@ -13,9 +13,10 @@ class Settings
     {
     }
 
-    public static function excerpt($string){
+    public static function excerpt($string)
+    {
 
-        return Str::limit(strip_tags($string),150);
+        return Str::limit(strip_tags($string), 150);
     }
 
     public static function opt($optionname, $default = null, $type = 'text', $location = null, $title = null, $description = null)
@@ -54,6 +55,8 @@ class Settings
     {
         $meta = [];
         $routeName =  \Route::currentRouteName();
+        $routeParam = \Route::current()->parameters();
+
         switch ($routeName) {
             case 'homepage':
                 $title = Settings::opt('websiteName', 'YayasanGambut.org') . Settings::opt('websiteTitleSeparator', ' - ') . Settings::opt('websiteTagline', 'Website Gambut Riau');
@@ -83,6 +86,45 @@ class Settings
 
 
 
+                break;
+
+            case 'pageBySlug':
+
+                $pagedata  = WinkPage::where('slug', $routeParam['slug'])->first();
+                $featuredImage = Settings::opt('websiteFeaturedImage', asset('/image/featured.png'));
+                $metas = (object) $pagedata->meta;
+                // dd($metas);
+                $title = $pagedata->title . ' ' . Settings::opt('websiteTitleSeparator', ' - ')  . ' ' . Settings::opt('websiteName', 'Nama website');
+                $description = $metas->meta_description;
+                // dd($description);
+
+
+                $ogImage = ($metas->opengraph_image !== null ? asset($metas->opengraph_image) : asset($featuredImage));
+                $twitterImage = ($metas->twitter_image !== null ? asset($metas->twitter_image) : asset($featuredImage));
+
+                $meta[] = '<!-- Primary Meta Tags -->';
+                $meta[] = '<title>' . $title . '</title>';
+                $meta[] = '<meta name="title" content="' . $title . '">';
+                $meta[] = '<meta name="description" content="' . $description . '">';
+                $meta[] = '';
+                $meta[] = '<!-- Open Graph / Facebook -->';
+                $meta[] = '<meta property="og:type" content="website">';
+                $meta[] = '<meta property="og:url" content="' . url()->current() . '">';
+                $meta[] = '<meta property="og:title" content="' . $title . '">';
+                $meta[] = '<meta property="og:description" content="' . $description . '">';
+                $meta[] = '<meta property="og:image" content="' . $ogImage . '">';
+                $meta[] = '';
+                $meta[] = '<!-- Twitter -->';
+                $meta[] = '<meta property="twitter:card" content="summary_large_image">';
+                $meta[] = '<meta property="twitter:url" content="' . url()->current() . '">';
+                $meta[] = '<meta property="twitter:title" content="' . $title . '">';
+                $meta[] = '<meta property="twitter:description" content="' . $description . '">';
+                $meta[] = '<meta property="twitter:image" content="' . $twitterImage . '">';
+
+                // dd($meta);
+
+                // dd(Route()->current()->parameters);
+
 
                 break;
 
@@ -91,7 +133,17 @@ class Settings
                 break;
         }
 
+
         return implode("\n", $meta);
+    }
+
+
+    public static function facebookMeta($array)
+    {
+    }
+
+    public static function twitterMeta($array)
+    {
     }
 
     public static function jsonLD()

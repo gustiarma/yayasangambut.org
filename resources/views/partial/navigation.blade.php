@@ -21,9 +21,10 @@
             Tentang
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a itemprop="url" class="dropdown-item" href="#">Visi & Misi</a>
-            <a itemprop="url" class="dropdown-item" href="#">Pembina & Pengawas</a>
-            <a itemprop="url" class="dropdown-item" href="/">Tenaga Ahli & Staff</a>
+            <a itemprop="url" class="dropdown-item" href="{{ route('pageBySlug','visi-dan-misi') }}">Visi &
+              Misi</a>
+            <a itemprop="url" class="dropdown-item" href="{{ route('pageBySlug','pembina-dan-pengawas') }}">Pembina & Pengawas</a>
+            <a itemprop="url" class="dropdown-item" href="{{ route('pageBySlug','struktur-organisasi') }}">Tenaga Ahli & Staff</a>
 
           </div>
         </li>
@@ -31,16 +32,16 @@
           <a itemprop="url" class="nav-link" href="/program">Program <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item ">
-          <a itemprop="url" class="nav-link" href="/berita">Berita <span class="sr-only">(current)</span></a>
+          <a itemprop="url" class="nav-link" href="{{ route('blogpage') }}">Berita <span class="sr-only">(current)</span></a>
         </li>
 
         <li class="nav-item ">
           <a itemprop="url" class="nav-link" href="/publikasi">Publikasi <span class="sr-only">(current)</span></a>
         </li>
 
-        <li class="nav-item ">
+        {{-- <li class="nav-item ">
           <a itemprop="url" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
+        </li> --}}
 
       </ul>
 

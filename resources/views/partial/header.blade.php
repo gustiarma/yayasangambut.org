@@ -11,7 +11,7 @@
         <div id="header">
             <div class="headerimage">
                 <a itemprop="url" href="{{ url()->to('/') }}" title="Beranda" rel="home" id="logo">
-                    <img src="/images/SAMPLELOGO.png" alt="Beranda">
+                    <img src="{{ asset('/images/SAMPLELOGO.png') }}" alt="Beranda">
                 </a>
                 <div>
 

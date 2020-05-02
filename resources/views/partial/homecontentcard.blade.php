@@ -49,7 +49,7 @@
 
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4 mt-4">
-          <a href="" class="btn btn-block btn-success">SELENGKAPNYA</a>
+          <a href="{{ route('blogpage') }}" class="btn btn-block btn-success">{{ Settings::opt('readMoreText') }}</a>
         </ul>
 
       </div>

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', 'MasterController@index')->name('homepage');
 Route::get('/' . Settings::opt('blogPermalink', 'blog'), 'MasterController@blogPage')->name('blogpage');
 Route::get('/' . Settings::opt('blogPermalink', 'blog') . '/{slug}', 'MasterController@blog')->name('blogBySlug');
+Route::get('/' . Settings::opt('pagePermalink', 'pages') . '/{slug}', 'MasterController@page')->name('pageBySlug');
 
 Auth::routes();
 

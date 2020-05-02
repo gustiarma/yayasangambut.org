@@ -471,22 +471,20 @@ img {
   height: auto;
 }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: inherit;
   opacity: .5;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
   color: inherit;
   opacity: .5;
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: inherit;
-  opacity: .5;
-}
-
-input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
   color: inherit;
   opacity: .5;
 }
@@ -540,21 +538,25 @@ table {
 
 @-webkit-keyframes spin {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -565,29 +567,35 @@ table {
 
 @-webkit-keyframes pulse {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 
   50% {
-    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
 
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 
   50% {
-    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
 
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -1261,7 +1269,8 @@ table {
 
 .ql-bubble .ql-tooltip {
   position: absolute;
-  transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
 }
 
 .ql-bubble .ql-tooltip a {
@@ -1270,7 +1279,8 @@ table {
 }
 
 .ql-bubble .ql-tooltip.ql-flip {
-  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .ql-bubble .ql-formats {
@@ -1762,7 +1772,8 @@ table {
   left: 0;
   margin-left: 50%;
   position: absolute;
-  transform: translate(-50%, -100%);
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
   transition: visibility 0s ease 200ms;
   visibility: hidden;
 }
@@ -1986,7 +1997,8 @@ table {
 
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #alert {
@@ -5595,7 +5607,6 @@ select:-webkit-autofill:focus {
   border: none;
   -webkit-text-fill-color: #22292f;
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
-  -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
   color: #22292f;
 }
