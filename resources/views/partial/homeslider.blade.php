@@ -10,9 +10,9 @@
                             <div class="l-content">
                                 <h3 class="sliderImageTitle">{{$item->title}}</h3>
                                 <div class="sliderImageBody">{{Settings::excerpt($item->body)}}</div>
-                                <div class="sliderImageLink"><a href="{{ route('blogBySlug',['slug'=>$item->slug])}}"
+                                {{-- <div class="sliderImageLink"><a href="{{ route('blogBySlug',['slug'=>$item->slug])}}"
                                         class="btn " title="">Baca Selengkapnya</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </article>
