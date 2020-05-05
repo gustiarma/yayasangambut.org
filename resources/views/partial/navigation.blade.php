@@ -23,13 +23,13 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a itemprop="url" class="dropdown-item" href="{{ route('pageBySlug','visi-dan-misi') }}">Visi &
               Misi</a>
-            <a itemprop="url" class="dropdown-item" href="{{ route('pageBySlug','pembina-dan-pengawas') }}">Pembina & Pengawas</a>
-            <a itemprop="url" class="dropdown-item" href="{{ route('pageBySlug','struktur-organisasi') }}">Tenaga Ahli & Staff</a>
+              <a itemprop="url" class="dropdown-item" href="{{ route('pageBySlug','partnership') }}">partnership</a>
+              <a itemprop="url" class="dropdown-item" href="{{ route('pageBySlug','struktur-organisasi') }}">Tenaga Ahli & Staff</a>
 
           </div>
         </li>
         <li class="nav-item ">
-          <a itemprop="url" class="nav-link" href="/program">Program <span class="sr-only">(current)</span></a>
+          <a itemprop="url" class="nav-link" href="{{ route('pageBySlug','program') }}">Program <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item ">
           <a itemprop="url" class="nav-link" href="{{ route('blogpage') }}">Berita <span class="sr-only">(current)</span></a>
