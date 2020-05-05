@@ -2,8 +2,8 @@ require('bootstrap')
 
 import Glide, { Autoplay, Controls, Swipe } from '@glidejs/glide/dist/glide.modular.esm'
 
-import '@fortawesome/fontawesome-free/css/all.css'
-import '@fortawesome/fontawesome-free/js/all.js'
+// import '@fortawesome/fontawesome-free/css/all.css'
+// import '@fortawesome/fontawesome-free/js/all.js'
 
 
 window.jQuery = require("jquery")
