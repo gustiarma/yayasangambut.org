@@ -10,7 +10,7 @@
 
 @section('footerJs')
 <script>
-  window.loadSlide();
+  // window.loadSlide();
 </script>
 
 @endsection
